@@ -59,7 +59,11 @@ fun main() {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int {
+    val hoursInSec = hours * 60 * 60
+    val minutesInSec = minutes * 60
+    return hoursInSec + minutesInSec + seconds
+}
 
 /**
  * Тривиальная
@@ -68,8 +72,14 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double {
+    val versh = 4.445
+    val sagenesInSainti = sagenes * 48 * versh
+    val arshinsInSainti = arshins * 16 * versh
+    val vershoksInSainti = vershoks * versh
 
+    return (sagenesInSainti + arshinsInSainti + vershoksInSainti) / 100
+}
 /**
  * Тривиальная
  *
@@ -92,7 +102,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Пользователь задает целое число, большее 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int = (number % 1000) / 100
 
 /**
  * Простая
